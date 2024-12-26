@@ -1,12 +1,12 @@
-import { User } from "./user.model";
+import { Author } from "./author.model";
+import { Comment } from "./comment.model";
 
 export interface Post {
     id: number;
     title: string;
-    description: string;
     content: string;
-    tagList: string[];
     createdAt: Date;
     updatedAt: Date;
-    author: User;
+    author: Author;
+    allComments: Comment[];
 }

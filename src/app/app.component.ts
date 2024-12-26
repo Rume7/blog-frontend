@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   recentPosts: Post[] = [];
   loading = false;
   error = '';
-  currentUser = 'Rume7'; // This should be handled by an auth service in a real app
+  currentUser = 'Testing'; // This should be handled by an auth service in a real app
 
   constructor(private postService: PostService) {}
 
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
   loadRecentPosts() {
     this.loading = true;
-    this.postService.getRecentPosts(10)
+    this.postService.getPosts()
       .pipe(
         catchError(error => {
           this.error = 'Failed to load posts. Please try again later.';

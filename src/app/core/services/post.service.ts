@@ -9,8 +9,8 @@ import { ApiResponse } from '../models/api-response.model';
   providedIn: 'root'
 })
 export class PostService {
-    
-  private apiUrl = `${environment.apiUrl}/api/posts`;
+
+  private apiUrl = `${environment.blogApiUrl}`;
 
   constructor(private http: HttpClient) { }
 
@@ -20,12 +20,12 @@ export class PostService {
       .set('page', page.toString())
       .set('size', size.toString());
     
-    return this.http.get<ApiResponse<Post[]>>(this.apiUrl, { params });
+    return this.http.get<ApiResponse<Post[]>>(`${this.apiUrl}/all`);
   }
 
   // Get recent posts
   getRecentPosts(limit: number = 10): Observable<ApiResponse<Post[]>> {
-    return this.http.get<ApiResponse<Post[]>>(`${this.apiUrl}/recent/${limit}`);
+    return this.http.get<ApiResponse<Post[]>>(`${this.apiUrl}/all/${limit}`);
   }
 
   // Get a single post by ID
@@ -35,17 +35,17 @@ export class PostService {
 
   // Create a new post
   createPost(post: Post): Observable<ApiResponse<Post>> {
-    return this.http.post<ApiResponse<Post>>(this.apiUrl, post);
+    return this.http.post<ApiResponse<Post>>(`${this.apiUrl}/create`, post);
   }
 
   // Update an existing post
   updatePost(id: number, post: Post): Observable<ApiResponse<Post>> {
-    return this.http.put<ApiResponse<Post>>(`${this.apiUrl}/${id}`, post);
+    return this.http.put<ApiResponse<Post>>(`${this.apiUrl}/update/${id}`, post);
   }
 
   // Delete a post
   deletePost(id: number): Observable<ApiResponse<void>> {
-    return this.http.delete<ApiResponse<void>>(`${this.apiUrl}/${id}`);
+    return this.http.delete<ApiResponse<void>>(`${this.apiUrl}/delete/${id}`);
   }
 
   // Search posts

@@ -16,27 +16,27 @@ export class ApiService {
   }
 
   get<T>(path: string,  options: { params?: HttpParams } = {}): Observable<T> {
-    return this.http.get<T>(`${environment.apiUrl}${path}`, options )
+    return this.http.get<T>(`${environment.blogApiUrl}${path}`, options )
       .pipe(catchError(this.formatErrors));
   }
 
   put<T>(path: string, body: object = {}): Observable<T> {
     return this.http.put<T>(
-      `${environment.apiUrl}${path}`,
+      `${environment.blogApiUrl}${path}`,
       JSON.stringify(body)
     ).pipe(catchError(this.formatErrors));
   }
 
   post<T>(path: string, body: object = {}): Observable<T> {
     return this.http.post<T>(
-      `${environment.apiUrl}${path}`,
+      `${environment.blogApiUrl}${path}`,
       JSON.stringify(body)
     ).pipe(catchError(this.formatErrors));
   }
 
   delete<T>(path: string): Observable<T> {
     return this.http.delete<T>(
-      `${environment.apiUrl}${path}`
+      `${environment.blogApiUrl}${path}`
     ).pipe(catchError(this.formatErrors));
   }
 }
