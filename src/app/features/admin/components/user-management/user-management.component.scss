@@ -1,0 +1,116 @@
+.user-management {
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+
+    h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #333;
+    }
+  }
+
+  .users-table-container {
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    overflow-x: auto;
+  }
+
+  .users-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+
+    th,
+    td {
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      font-weight: 600;
+      color: #495057;
+    }
+
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 12px;
+      font-size: 12px;
+      font-weight: 500;
+
+      &.active {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      &:not(.active) {
+        background-color: #ffebee;
+        color: #c62828;
+      }
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+
+      .btn {
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 12px;
+        cursor: pointer;
+        border: none;
+
+        &.btn-edit {
+          background-color: #e3f2fd;
+          color: #1976d2;
+
+          &:hover {
+            background-color: #bbdefb;
+          }
+        }
+
+        &.btn-delete {
+          background-color: #ffebee;
+          color: #c62828;
+
+          &:hover {
+            background-color: #ffcdd2;
+          }
+        }
+      }
+    }
+  }
+
+  .no-users {
+    padding: 24px;
+    text-align: center;
+    color: #666;
+  }
+
+  .loading-state {
+    padding: 40px;
+    text-align: center;
+  }
+
+  .alert {
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+
+    &.alert-danger {
+      background-color: #ffebee;
+      color: #c62828;
+      border: 1px solid #ffcdd2;
+    }
+  }
+}

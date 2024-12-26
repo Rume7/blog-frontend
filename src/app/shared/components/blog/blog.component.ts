@@ -1,7 +1,6 @@
-// components/blog/blog.component.ts
 import { Component, OnInit } from '@angular/core';
-import { BlogService } from '../../services/blog.service';
-import { BlogPost } from '../../models/blog-post.model';
+import { BlogService } from '../../../core/services/blog.service';
+import { Post } from '../../../core/models/post.model';
 
 @Component({
   selector: 'app-blog',
@@ -9,8 +8,8 @@ import { BlogPost } from '../../models/blog-post.model';
   styleUrls: ['./blog.component.scss']
 })
 export class BlogComponent implements OnInit {
-  posts: BlogPost[] = [];
-  recentPosts: BlogPost[] = [];
+  posts: Post[] = [];
+  recentPosts: Post[] = [];
 
   constructor(private blogService: BlogService) { }
 

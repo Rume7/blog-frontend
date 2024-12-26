@@ -1,18 +1,15 @@
-import { CommonModule } from "@angular/common";
-import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../../shared/components/shared.module';
+
+const routes: Routes = [];
 
 @NgModule({
-    imports: [
-      CommonModule,
-      RouterModule.forChild([
-        { path: '', component: BlogListComponent }
-      ]),
-      SharedModule
-    ],
-    declarations: [
-      BlogListComponent,
-      BlogDetailComponent
-    ]
-  })
-  export class BlogModule { }
+  imports: [
+    SharedModule,
+    RouterModule.forChild(routes)
+  ],
+  declarations: [
+  ]
+})
+export class BlogModule { }

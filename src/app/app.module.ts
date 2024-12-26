@@ -8,26 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Components
 import { AppComponent } from './app.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { BlogPostComponent } from './components/blog-post/blog-post.component';
-import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 // Services
-import { BlogService } from './services/blog.service';
-import { AuthService } from './services/auth.service';
-import { UserService } from './services/user.service';
-import { CommentService } from './services/comment.service';
+import { BlogService } from '../app/core/services/blog.service';
+import { AuthService } from '../app/core/services/auth.service';
+import { UserService } from '../app/core/services/user.service';
+import { CommentService } from '../app/core/services/comment.service';
+import { BlogComponent } from './shared/components/blog/blog.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
     BlogComponent,
-    HeaderComponent,
-    FooterComponent,
-    BlogPostComponent,
-    SidebarComponent
   ],
   imports: [
     BrowserModule,
@@ -43,6 +34,6 @@ import { CommentService } from './services/comment.service';
     UserService,
     CommentService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: []
 })
 export class AppModule { }

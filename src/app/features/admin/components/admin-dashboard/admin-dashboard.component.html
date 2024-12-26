@@ -1,0 +1,25 @@
+<div class="admin-dashboard">
+  <header class="dashboard-header">
+    <h1>Admin Dashboard</h1>
+  </header>
+
+  <nav class="dashboard-nav">
+    <ul>
+      <li>
+        <a routerLink="./users" routerLinkActive="active">User Management</a>
+      </li>
+      <li>
+        <a routerLink="./posts" routerLinkActive="active">Posts Management</a>
+      </li>
+      <li>
+        <a routerLink="./comments" routerLinkActive="active"
+          >Comments Management</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+  <main class="dashboard-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

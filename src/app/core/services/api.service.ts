@@ -15,8 +15,8 @@ export class ApiService {
     return throwError(() => error.error);
   }
 
-  get<T>(path: string, params: HttpParams = new HttpParams()): Observable<T> {
-    return this.http.get<T>(`${environment.apiUrl}${path}`, { params })
+  get<T>(path: string,  options: { params?: HttpParams } = {}): Observable<T> {
+    return this.http.get<T>(`${environment.apiUrl}${path}`, options )
       .pipe(catchError(this.formatErrors));
   }
 
