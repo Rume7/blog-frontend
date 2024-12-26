@@ -212,3 +212,103 @@ footer {
 .poem {
   animation: fadeIn 0.5s ease-in;
 }
+
+// Keep all your existing styles but update these class names and add these new styles
+
+.post {
+    padding: 1rem;
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+    h2 {
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+  }
+  
+  .post-metadata {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid $divider-color;
+  }
+  
+  .post-content {
+    line-height: 1.8;
+    font-size: 1.1rem;
+  }
+  
+  // Update navigation styles
+  nav {
+    background-color: $secondary-color;
+    padding: 0.5rem 2rem;
+    position: fixed;
+    top: $header-height;
+    width: 100%;
+    z-index: 99;
+    height: $nav-height;
+    display: flex;
+    justify-content: flex-end;
+  
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+  
+      li {
+        a {
+          color: $white;
+          text-decoration: none;
+          font-size: 1rem;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background-color: rgba($white, 0.1);
+          }
+  
+          &.active {
+            background-color: rgba($white, 0.2);
+          }
+        }
+      }
+    }
+  }
+  
+  .recent-posts {
+    flex: 1;
+    padding: 2rem;
+    background-color: $light-bg;
+  
+    h3 {
+      margin-bottom: 1rem;
+      color: $primary-color;
+    }
+  
+    ul {
+      list-style: none;
+  
+      li {
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        background-color: $white;
+        border-radius: 4px;
+        box-shadow: $box-shadow;
+        transition: transform 0.2s ease;
+        cursor: pointer;
+  
+        &:hover {
+          transform: translateX(5px);
+        }
+  
+        &.active {
+          background-color: $secondary-color;
+          color: $white;
+        }
+      }
+    }
+  }

@@ -14,6 +14,7 @@ import { AuthService } from '../app/core/services/auth.service';
 import { UserService } from '../app/core/services/user.service';
 import { CommentService } from '../app/core/services/comment.service';
 import { BlogComponent } from './shared/components/blog/blog.component';
+import { PostService } from './core/services/post.service';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BlogComponent } from './shared/components/blog/blog.component';
     BlogService,
     AuthService,
     UserService,
+    PostService,
     CommentService
   ],
   bootstrap: [AppComponent]
