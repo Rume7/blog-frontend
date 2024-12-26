@@ -1,0 +1,36 @@
+<header>
+    <h1>Tidings that Gladden Blog</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a></li>
+      <li><a routerLink="/archive" routerLinkActive="active">Archive</a></li>
+      <li><a routerLink="/register" routerLinkActive="active">Sign Up</a></li>
+      <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+    </ul>
+  </nav>
+  
+  <div class="content-container">
+    <main class="main-content">
+      <article class="poem">
+        <h2>{{currentPoem?.title}}</h2>
+        <p>
+          {{currentPoem?.content}}
+        </p>
+      </article>
+    </main>
+  
+    <div class="divider"></div>
+  
+    <aside class="recent-poems">
+      <h3>Recent Poems</h3>
+      <ul>
+        <li *ngFor="let poem of recentPoems">{{poem.title}}</li>
+      </ul>
+    </aside>
+  </div>
+  
+  <footer>
+    <p>&copy; {{currentYear}} Poetry Blog. All rights reserved.</p>
+  </footer>

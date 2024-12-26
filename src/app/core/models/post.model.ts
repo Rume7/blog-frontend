@@ -5,7 +5,7 @@ export interface Post {
     slug: string;
     title: string;
     description: string;
-    body: string;
+    content: string;
     tagList: string[];
     createdAt: string;
     updatedAt: string;

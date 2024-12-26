@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../../../../core/services/user.service';
 import { User } from '../../../../core/models/user.model';
 
@@ -15,7 +16,8 @@ export class UserManagementComponent implements OnInit {
   totalPages = 1;
   totalUsers = 0;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -42,6 +44,13 @@ export class UserManagementComponent implements OnInit {
 
   onPageChange(page: number): void {
     this.loadUsers(page);
+  }
+
+  editUser(userId: number): void {
+    // Implement the edit user logic here
+    // For example, navigate to edit page:
+    this.router.navigate(['/admin/users/edit', userId]);
+    // Or open a modal/dialog for editing
   }
 
   updateUserStatus(userId: number, isActive: boolean): void {

@@ -1,4 +1,3 @@
-// src/app/app.module.ts
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -18,6 +17,7 @@ import { BlogComponent } from './shared/components/blog/blog.component';
 
 @NgModule({
   declarations: [
+    AppComponent,
     BlogComponent,
   ],
   imports: [
@@ -34,6 +34,6 @@ import { BlogComponent } from './shared/components/blog/blog.component';
     UserService,
     CommentService
   ],
-  bootstrap: []
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
