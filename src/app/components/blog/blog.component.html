@@ -1,0 +1,28 @@
+<!-- components/blog/blog.component.html -->
+<div class="blog-container">
+    <div class="main-content">
+      <div class="posts">
+        <article *ngFor="let post of posts" class="post">
+          <h2>{{post.title}}</h2>
+          <div class="post-meta">
+            <span>By {{post.author}}</span>
+            <span>{{post.createdAt | date}}</span>
+          </div>
+          <div class="post-content">
+            {{post.content}}
+          </div>
+        </article>
+      </div>
+    </div>
+    
+    <div class="sidebar">
+      <h3>Recent Posts</h3>
+      <ul class="recent-posts">
+        <li *ngFor="let post of recentPosts">
+          <a [routerLink]="['/post', post.id]">{{post.title}}</a>
+          <span class="post-date">{{post.createdAt | date:'shortDate'}}</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
